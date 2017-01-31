@@ -1,1 +1,11 @@
-home#index page
+<% @locations.each do |location| %>
+<h2><%=location.name%>,<%=location.city%></h2><b2>
+<%= link_to image_tag(location.image, class: 'location'), location %><br>
+<%= location.description %>
+<h3>Events:</h3>
+<% @events.each do |event| %>
+<% if event.location_id == location.id %>
+<%= event.name %><br>
+<% end %>
+<% end %>
+<% end %>

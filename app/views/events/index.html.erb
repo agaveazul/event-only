@@ -1,0 +1,6 @@
+<% @events.each do |event| %>
+<div>
+<%= link_to "#{event.name}", location_event_path(@location, event)%><br>
+<%= event.date %><br><br>
+</div>
+<% end %>
